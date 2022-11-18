@@ -198,43 +198,44 @@ def calculate_severity(inputs):
                 
             elif Pressure>=300:
                 severity=5
-
-            elif "Rainfall intensity"==parameter:
-                Rainfall=input_val[1]
-                if Rainfall <30:
-                    severity=0
-                elif Rainfall >=30 and Rainfall<108:
-                    severity=1
-                    
-                elif Rainfall>=108 and Rainfall<337:
-                    severity=2
-                    
-                elif Rainfall >=337 and Rainfall<863:
-                    severity=3
-                    
-                elif Rainfall>=863 and Rainfall <1000:
-                    severity=4
-                    
-                elif Rainfall>=1000:
-                    severity=5  
-            elif parameter=="Position with respect to Equator NH SH":
-                Hemisphere=input_val[1]
-                if Hemisphere=="South_Hemisphere":
-                    severity=3
-                if Hemisphere=="North_Hemisphere":
-                    severity=5
-            elif parameter== "displacement by latitude from equator":
-                displacement_by_latitude=input_val[1]
-                if displacement_by_latitude<2:
-                    severity=0
-                elif displacement_by_latitude>=2 and displacement_by_latitude<3:
-                    severity=1
-                elif displacement_by_latitude>=3 and displacement_by_latitude<5:
-                    severity=3
-                elif displacement_by_latitude==5:
-                    severity=4
-                elif displacement_by_latitude>5 :
-                    severity=5
+        elif "Rainfall intensity"==parameter:
+            Rainfall=input_val[1]
+            if Rainfall <30:
+                severity=0
+            elif Rainfall >=30 and Rainfall<108:
+                severity=1
+                
+            elif Rainfall>=108 and Rainfall<337:
+                severity=2
+                
+            elif Rainfall >=337 and Rainfall<863:
+                severity=3
+                
+            elif Rainfall>=863 and Rainfall <1000:
+                severity=4
+                
+            elif Rainfall>=1000:
+                severity=5  
+        elif parameter=="Position with respect to Equator NH SH":
+            Hemisphere=input_val[1]
+            if Hemisphere=="South_Hemisphere":
+                severity=3
+                print(Hemisphere ) 
+            elif Hemisphere=="North_Hemisphere":
+                print(Hemisphere )
+                severity=5
+        elif parameter== "displacement by latitude from equator":
+            displacement_by_latitude=input_val[1]
+            if displacement_by_latitude<2:
+                severity=0
+            elif displacement_by_latitude>=2 and displacement_by_latitude<3:
+                severity=1
+            elif displacement_by_latitude>=3 and displacement_by_latitude<5:
+                severity=3
+            elif displacement_by_latitude==5:
+                severity=4
+            elif displacement_by_latitude>5 :
+                severity=5
         total_severity+=severity
         result.append((parameter,severity))
     avg_severity=int(total_severity/len(inputs))

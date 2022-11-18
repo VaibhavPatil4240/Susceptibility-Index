@@ -67,7 +67,7 @@ def main():
         ],
         "Position with respect to Equator NH SH":[ 
             "South_Hemisphere" , 
-            "South_Hemisphere"
+            "North_Hemisphere"
         ]
     }
 
@@ -95,14 +95,17 @@ def main():
             input_parameters.append(
                 [
                     parameter,
+
                     st.selectbox(
                     label=parameter,
                     options=flood_parameters_values[parameter]
                     )
                 ]
             )
+    print(input_parameters)
     if(len(input_parameters)>0):
         result,final_severity=severity.calculate_severity(input_parameters)
+        print(result)
         if((not result is None) and len(result)>0):
             result=pd.DataFrame(
                 np.array(result),
