@@ -35,7 +35,7 @@ def main():
         "Elevation":[0,10000],
         "Soil Permeability":[0,20],
         "Distance From River":[0,10000],
-        "Flood depth":[0,1],
+        "Flood depth":[0.00,1.00],
         "windspeed Severity":[0,2500],
         "temprature Severity":[0,280],
         "humidity Severity":[0,600],
